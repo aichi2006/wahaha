@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>p</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <style>
+            *{margin: 0;padding: 0;}
+            .cell{display: none;width: 300px;height: 300px;border: 1px solid #ccc;}
+            .nav a.active{background: red;color: #fff;}
+        </style>
+        <script>
+            window.onload=function(){
+                var myNav=document.getElementById("nav");
+                var navA=myNav.getElementsByTagName('a');
+                var myTab=document.getElementById("tab");
+                var cells=myTab.getElementsByTagName("div");
+                for(var i=0;i<navA.length;i++){
+                    navA[i].index=i;
+                    //alert(navA[i].index);
+                    navA[i].onclick=function(){
+                        //alert('a');
+                        for(var j=0;j<cells.length;j++){
+                            navA[j].className="";
+                            cells[j].style.display='none';
+                        }
+                        this.className="active";
+                        cells[this.index].style.display="block";
+                    }
+                }
+                
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div id="nav" class="nav">
+            <a href="javascript:;">主页</a>
+            <a href="javascript:;">相册</a>
+            <a href="javascript:;">故事</a>
+        </div>
+        <div id="tab" class="tabs">
+            <div class="cell" style="display:block;">1返回酒店设计都是不够环保的好说的好姐姐</div>
+            <div class="cell">2，老大妈vknmkjncjdnjnbhj</div>
+            <div class="cell">3对谁都是你吃vdshbvhjbhjdb </div>
+        </div>
+    </body>
+</html>
